@@ -1,1 +1,1 @@
-web: python app: productsProject/wsgi.py
+web: gunicorn manage.py runserver 0.0.0.0:5000
