@@ -24,7 +24,7 @@ def productsApi(request, id=False):
             products_serializer = ProductsSerializer(products, many=True)
             return JsonResponse(products_serializer.data, safe=False)
         else:
-            products = Products.objects.filter(id=id)
+            products = Products.objects.get(id=id)
             products_serializer = ProductsSerializer(products)
             return JsonResponse(products_serializer.data, safe=False)
     elif request.method == 'POST':
